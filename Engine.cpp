@@ -80,8 +80,6 @@ void Engine::InitializeGlew()
 	glewInit();
 }
 
-GLint uniColor;
-
 void InitOpenGL()
 {
 	GLuint vao;
@@ -90,11 +88,11 @@ void InitOpenGL()
 	glBindVertexArray(vao);
 	
 	//Mesh Data
-	float vertices[] = {
-		0.0f, 0.5f,
-		0.5f, -0.5f,
-		-0.5f, -0.5f
-	};
+	GLfloat vertices[] = {
+         0.0f,  0.5f, 1.0f, 0.0f, 0.0f,
+         0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+        -0.5f, -0.5f, 0.0f, 0.0f, 1.0f
+    };
 	
 	//Loading mesh into graphics card
 	
@@ -132,14 +130,15 @@ void InitOpenGL()
 
 	//Get the position input from the shader
 	GLint posAttrib = glGetAttribLocation(shaderProgram, "position");
+	GLint colorAttrib = glGetAttribLocation(shaderProgram, "color");
 	
-	//Specify how the current VBO is read into the input
-	glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
+	//Specify how the current VBO is read into the input     sizeof vertex   , offset
+	glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), 0);
+	glVertexAttribPointer(colorAttrib, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (void*)(2 * sizeof(GLfloat)));
 	
 	//Enable the input ?
 	glEnableVertexAttribArray(posAttrib);
-	
-	uniColor = glGetUniformLocation(shaderProgram, "triangleColor");
+	glEnableVertexAttribArray(colorAttrib);
 }
 
 void Engine::Initialize()
@@ -147,15 +146,13 @@ void Engine::Initialize()
 	InitializeGlew();
 	InitOpenGL();
 }
+
 void Engine::Update(sf::Time gameTime)
 {
-	glUniform3f(uniColor, (sin(_runtimeClock.getElapsedTime().asSeconds() * 4.0f) + 1.0f )/2.0f, 0.0f,0.0f);
 }
 
 void Engine::Draw(sf::Time gameTime)
 {
-	
-	
 	glClearColor(0.0f,0.0f,0.0f,1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 	
