@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=amind
-Date                   :=03/02/2016
+Date                   :=04/02/2016
 CodeLitePath           :="F:\Programs\CodeLite"
 LinkerName             :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/g++.exe
 SharedObjectLinkerName :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/g++.exe -shared -fPIC
@@ -62,7 +62,7 @@ AS       := F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=F:\Programs\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Engine.cpp$(ObjectSuffix) $(IntermediateDirectory)/shader.cpp$(ObjectSuffix) $(IntermediateDirectory)/camera.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/engine.cpp$(ObjectSuffix) $(IntermediateDirectory)/shader.cpp$(ObjectSuffix) $(IntermediateDirectory)/camera.cpp$(ObjectSuffix) $(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix) $(IntermediateDirectory)/scene.cpp$(ObjectSuffix) $(IntermediateDirectory)/mesh.cpp$(ObjectSuffix) $(IntermediateDirectory)/model.cpp$(ObjectSuffix) 
 
 
 
@@ -101,13 +101,13 @@ $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) "main.cpp"
 
-$(IntermediateDirectory)/Engine.cpp$(ObjectSuffix): Engine.cpp $(IntermediateDirectory)/Engine.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/Engine.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Engine.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Engine.cpp$(DependSuffix): Engine.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Engine.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Engine.cpp$(DependSuffix) -MM "Engine.cpp"
+$(IntermediateDirectory)/engine.cpp$(ObjectSuffix): engine.cpp $(IntermediateDirectory)/engine.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/engine.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/engine.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/engine.cpp$(DependSuffix): engine.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/engine.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/engine.cpp$(DependSuffix) -MM "engine.cpp"
 
-$(IntermediateDirectory)/Engine.cpp$(PreprocessSuffix): Engine.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Engine.cpp$(PreprocessSuffix) "Engine.cpp"
+$(IntermediateDirectory)/engine.cpp$(PreprocessSuffix): engine.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/engine.cpp$(PreprocessSuffix) "engine.cpp"
 
 $(IntermediateDirectory)/shader.cpp$(ObjectSuffix): shader.cpp $(IntermediateDirectory)/shader.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/shader.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/shader.cpp$(ObjectSuffix) $(IncludePath)
@@ -124,6 +124,38 @@ $(IntermediateDirectory)/camera.cpp$(DependSuffix): camera.cpp
 
 $(IntermediateDirectory)/camera.cpp$(PreprocessSuffix): camera.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/camera.cpp$(PreprocessSuffix) "camera.cpp"
+
+$(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix): glrenderer.cpp $(IntermediateDirectory)/glrenderer.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/glrenderer.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/glrenderer.cpp$(DependSuffix): glrenderer.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/glrenderer.cpp$(DependSuffix) -MM "glrenderer.cpp"
+
+$(IntermediateDirectory)/glrenderer.cpp$(PreprocessSuffix): glrenderer.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/glrenderer.cpp$(PreprocessSuffix) "glrenderer.cpp"
+
+$(IntermediateDirectory)/scene.cpp$(ObjectSuffix): scene.cpp $(IntermediateDirectory)/scene.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/scene.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/scene.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/scene.cpp$(DependSuffix): scene.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/scene.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/scene.cpp$(DependSuffix) -MM "scene.cpp"
+
+$(IntermediateDirectory)/scene.cpp$(PreprocessSuffix): scene.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/scene.cpp$(PreprocessSuffix) "scene.cpp"
+
+$(IntermediateDirectory)/mesh.cpp$(ObjectSuffix): mesh.cpp $(IntermediateDirectory)/mesh.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/mesh.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/mesh.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/mesh.cpp$(DependSuffix): mesh.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/mesh.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/mesh.cpp$(DependSuffix) -MM "mesh.cpp"
+
+$(IntermediateDirectory)/mesh.cpp$(PreprocessSuffix): mesh.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/mesh.cpp$(PreprocessSuffix) "mesh.cpp"
+
+$(IntermediateDirectory)/model.cpp$(ObjectSuffix): model.cpp $(IntermediateDirectory)/model.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/model.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/model.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/model.cpp$(DependSuffix): model.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/model.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/model.cpp$(DependSuffix) -MM "model.cpp"
+
+$(IntermediateDirectory)/model.cpp$(PreprocessSuffix): model.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/model.cpp$(PreprocessSuffix) "model.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

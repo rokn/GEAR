@@ -21,10 +21,10 @@ namespace OGI
 
 	Shader::~Shader()
 	{
-		
+		glDeleteProgram(_program);
 	}
 
-	GLuint Shader::GetProgram()
+	GLuint Shader::GetProgram() const
 	{
 		return _program;
 	}

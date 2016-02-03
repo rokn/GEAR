@@ -8,6 +8,9 @@
     <File Name="shader.cpp"/>
     <File Name="camera.cpp"/>
     <File Name="glrenderer.cpp"/>
+    <File Name="scene.cpp"/>
+    <File Name="mesh.cpp"/>
+    <File Name="model.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
     <File Name="engine.h"/>
@@ -15,6 +18,9 @@
     <File Name="camera.h"/>
     <File Name="direction.h"/>
     <File Name="glrenderer.h"/>
+    <File Name="scene.h"/>
+    <File Name="model.h"/>
+    <File Name="mesh.h"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Shaders">
     <File Name="Debug/MyFragmentShader.fs"/>

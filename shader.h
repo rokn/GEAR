@@ -22,7 +22,7 @@ namespace OGI
 		public:
 			Shader(std::string vertexPath, std::string fragmentPath);
 			~Shader();
-			GLuint GetProgram();
+			GLuint GetProgram() const;
 			void Use();
 	};
 }

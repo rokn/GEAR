@@ -2,6 +2,7 @@
 #define Camera_H
 
 #include <GL/glew.h>
+#include <SFML/Window.hpp>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -22,6 +23,7 @@ namespace OGI
 		const static GLfloat DEFAULT_FAR_CLIP = 100.0f;
 		const static GLfloat MIN_ZOOM = 1.0f;
 		const static GLfloat MAX_ZOOM = 90.0f;
+		const static GLfloat SENSITIVITY = 0.05f;
 
 		glm::vec3 _position;
 		glm::vec3 _forward;
@@ -56,6 +58,7 @@ namespace OGI
 		glm::mat4 GetViewMatrix() const;
 		glm::mat4 GetProjectionMatrix() const;
 		void SetMoveSpeed(GLfloat newMoveSpeed);
+		void FreeFlyControl(const sf::Window& window, sf::Vector2i windowCenterPos, sf::Time elapsedTime);
 		
 	private:
 		void UpdateDirection();

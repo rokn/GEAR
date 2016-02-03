@@ -1,6 +1,8 @@
 #ifndef Engine_H
 #define Engine_H
 
+#include "glrenderer.h"
+#include "camera.h"
 #include "SFML/Window.hpp"
 
 class Engine
@@ -10,6 +12,8 @@ private:
 	bool _running;
 	int _exitCode;
 	sf::Clock _runtimeClock;
+	OGI::GLRenderer _renderer;
+	OGI::Camera *_mainCamera;
 	
     void CreateWindow(int resolutionWidth, int resolutionHeight, bool fullscreen);
 	void HandleEvent(sf::Event windowEvent);

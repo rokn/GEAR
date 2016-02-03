@@ -96,5 +96,27 @@ namespace OGI
 		
 	}
 	
-
+	void Camera::FreeFlyControl(const sf::Window& window, sf::Vector2i windowCenterPos, sf::Time elapsedTime)
+	{
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		{
+			Move(OGI::LEFT, elapsedTime.asSeconds());
+		}
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			Move(OGI::RIGHT, elapsedTime.asSeconds());
+		}
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		{
+			Move(OGI::BACKWARD, elapsedTime.asSeconds());
+		}
+		if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+		{
+			Move(OGI::FORWARD, elapsedTime.asSeconds());
+		}
+		
+		sf::Vector2i mouseOffset = sf::Mouse::getPosition(window) - windowCenterPos;
+		
+		Turn(mouseOffset.x * SENSITIVITY, -mouseOffset.y * SENSITIVITY);
+	}
 }
