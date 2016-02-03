@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=amind
-Date                   :=01/02/2016
+Date                   :=03/02/2016
 CodeLitePath           :="F:\Programs\CodeLite"
 LinkerName             :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/g++.exe
 SharedObjectLinkerName :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/g++.exe -shared -fPIC
@@ -38,12 +38,12 @@ MakeDirCommand         :=makedir
 RcCmpOptions           := 
 RcCompilerName         :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/windres.exe
 LinkOptions            :=  -lsfml-graphics-s-d -lsfml-window-s-d -lsfml-system-s-d -lwinmm -lgdi32 -ljpeg -lfreetype -lglew32s -lopengl32
-IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)"F:/Google Drive/Programming/SFML/SFML-2.3.2GCC4.8.1/include" $(IncludeSwitch)"F:/Google Drive/Programming/OpenGL/glew-1.13.0/include" 
+IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)../../Dependencies/include 
 IncludePCH             := 
 RcIncludePath          := 
 Libs                   := 
 ArLibs                 :=  
-LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)"F:/Google Drive/Programming/SFML/SFML-2.3.2GCC4.8.1/lib" $(LibraryPathSwitch)"F:/Google Drive/Programming/OpenGL/glew-1.13.0/lib/Release/Win32" 
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)../../Dependencies/lib 
 
 ##
 ## Common variables
@@ -62,7 +62,7 @@ AS       := F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=F:\Programs\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Engine.cpp$(ObjectSuffix) $(IntermediateDirectory)/HelperMethods.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Engine.cpp$(ObjectSuffix) $(IntermediateDirectory)/shader.cpp$(ObjectSuffix) $(IntermediateDirectory)/camera.cpp$(ObjectSuffix) 
 
 
 
@@ -109,13 +109,21 @@ $(IntermediateDirectory)/Engine.cpp$(DependSuffix): Engine.cpp
 $(IntermediateDirectory)/Engine.cpp$(PreprocessSuffix): Engine.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Engine.cpp$(PreprocessSuffix) "Engine.cpp"
 
-$(IntermediateDirectory)/HelperMethods.cpp$(ObjectSuffix): HelperMethods.cpp $(IntermediateDirectory)/HelperMethods.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/HelperMethods.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/HelperMethods.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/HelperMethods.cpp$(DependSuffix): HelperMethods.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/HelperMethods.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/HelperMethods.cpp$(DependSuffix) -MM "HelperMethods.cpp"
+$(IntermediateDirectory)/shader.cpp$(ObjectSuffix): shader.cpp $(IntermediateDirectory)/shader.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/shader.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/shader.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/shader.cpp$(DependSuffix): shader.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/shader.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/shader.cpp$(DependSuffix) -MM "shader.cpp"
 
-$(IntermediateDirectory)/HelperMethods.cpp$(PreprocessSuffix): HelperMethods.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/HelperMethods.cpp$(PreprocessSuffix) "HelperMethods.cpp"
+$(IntermediateDirectory)/shader.cpp$(PreprocessSuffix): shader.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/shader.cpp$(PreprocessSuffix) "shader.cpp"
+
+$(IntermediateDirectory)/camera.cpp$(ObjectSuffix): camera.cpp $(IntermediateDirectory)/camera.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/camera.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/camera.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/camera.cpp$(DependSuffix): camera.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/camera.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/camera.cpp$(DependSuffix) -MM "camera.cpp"
+
+$(IntermediateDirectory)/camera.cpp$(PreprocessSuffix): camera.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/camera.cpp$(PreprocessSuffix) "camera.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

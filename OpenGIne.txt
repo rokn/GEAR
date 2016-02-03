@@ -1,1 +1,1 @@
-./Debug/main.cpp.o ./Debug/Engine.cpp.o ./Debug/HelperMethods.cpp.o   
+./Debug/main.cpp.o ./Debug/Engine.cpp.o ./Debug/shader.cpp.o ./Debug/camera.cpp.o   

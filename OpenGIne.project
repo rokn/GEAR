@@ -4,16 +4,21 @@
   <Dependencies/>
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
-    <File Name="Engine.cpp"/>
-    <File Name="HelperMethods.cpp"/>
+    <File Name="engine.cpp"/>
+    <File Name="shader.cpp"/>
+    <File Name="camera.cpp"/>
+    <File Name="glrenderer.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
-    <File Name="Engine.h"/>
-    <File Name="HelperMethods.h"/>
+    <File Name="engine.h"/>
+    <File Name="shader.h"/>
+    <File Name="camera.h"/>
+    <File Name="direction.h"/>
+    <File Name="glrenderer.h"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Shaders">
-    <File Name="Debug/MyFragmentShader.fragmentshader"/>
-    <File Name="Debug/MyVertexShader.vertexshader"/>
+    <File Name="Debug/MyFragmentShader.fs"/>
+    <File Name="Debug/MyVertexShader.vs"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
@@ -28,14 +33,12 @@
     <Configuration Name="Debug" CompilerType="MinGW ( gcc.exe (tdm-1) 4.9.2 )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-g;-O0;-Wall" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
-        <IncludePath Value="F:/Google Drive/Programming/SFML/SFML-2.3.2GCC4.8.1/include"/>
-        <IncludePath Value="F:/Google Drive/Programming/OpenGL/glew-1.13.0/include"/>
+        <IncludePath Value="../../Dependencies/include"/>
         <Preprocessor Value="SFML_STATIC"/>
         <Preprocessor Value="GLEW_STATIC"/>
       </Compiler>
       <Linker Options="-lsfml-graphics-s-d;-lsfml-window-s-d;-lsfml-system-s-d;-lwinmm;-lgdi32;-ljpeg;-lfreetype;-lglew32s;-lopengl32" Required="yes">
-        <LibraryPath Value="F:/Google Drive/Programming/SFML/SFML-2.3.2GCC4.8.1/lib"/>
-        <LibraryPath Value="F:/Google Drive/Programming/OpenGL/glew-1.13.0/lib/Release/Win32"/>
+        <LibraryPath Value="../../Dependencies/lib"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
