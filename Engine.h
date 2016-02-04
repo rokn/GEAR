@@ -16,8 +16,6 @@ private:
 	OGI::Camera *_mainCamera;
 	
     void CreateWindow(int resolutionWidth, int resolutionHeight, bool fullscreen);
-	void HandleEvent(sf::Event windowEvent);
-	void InitializeGlew();
 	void ResetMousePos();
 public:
     Engine();
@@ -28,6 +26,7 @@ public:
 protected:
 	sf::Window& GetWindow();
 	void virtual Initialize();
+	void virtual HandleEvent(sf::Event windowEvent);
 	void virtual Update(const sf::Time elapsedTime);
 	void virtual Draw(const sf::Time elapsedTime);
 };

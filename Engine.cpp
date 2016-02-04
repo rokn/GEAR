@@ -134,21 +134,7 @@ void InitOpenGL()
 {	
 	shader = new OGI::Shader("MyVertexShader.vs","MyFragmentShader.fs");
 	
-	std::vector<OGI::Vertex> vertices;
-	std::vector<GLuint> indices;
-	std::vector<OGI::Texture> textures;
-	OGI::Vertex v1,v2,v3;
-	v1.Position = glm::vec3(0.0f,0.5f,0.0f);
-	v2.Position = glm::vec3(0.5f,-0.5f,0.0f);
-	v3.Position = glm::vec3(-0.5f,-0.5f,0.0f);
-	vertices.push_back(v1);
-	vertices.push_back(v2);
-	vertices.push_back(v3);
-	indices.push_back(0);
-	indices.push_back(1);
-	indices.push_back(2);
-	
-	mesh = new OGI::Mesh(vertices,indices,textures);
+	mesh = OGI::Mesh::MakeCube(1,1,1);
 	
 	glUseProgram(shader->GetProgram());
 }

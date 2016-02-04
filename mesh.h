@@ -27,9 +27,11 @@ namespace OGI
 	class Mesh
 	{
 	public:
+		Mesh(GLfloat* vertices,int vc, GLuint* indices, int ic);
 		Mesh(std::vector<OGI::Vertex> vertices, std::vector<GLuint> indices, std::vector<OGI::Texture> textures);
 		~Mesh();
 		void Draw(const Shader& shader);
+		static Mesh* MakeCube(float w, float h, float z);
 		
 	private:
 		std::vector<OGI::Vertex> _vertices;
