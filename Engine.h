@@ -12,14 +12,11 @@ private:
 	bool _running;
 	int _exitCode;
 	sf::Clock _runtimeClock;
-	OGI::GLRenderer _renderer;
-	OGI::Camera *_mainCamera;
 	
     void CreateWindow(int resolutionWidth, int resolutionHeight, bool fullscreen);
-	void ResetMousePos();
 public:
     Engine();
-    ~Engine();
+    virtual ~Engine();
 	int Run();
 	void Exit(int code = 0);
 	

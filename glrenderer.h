@@ -5,19 +5,22 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <SFML/Window.hpp>
+
 namespace OGI
 {
 	
 	class GLRenderer
 	{
 	private:
-		
+		sf::Window& _gameWindow;
 		void InitializeGlew();
-	public:
-		GLRenderer();
-		~GLRenderer();
 		void Initialize();
-		void Clear(glm::vec3 clearColor);
+	public:
+		GLRenderer(sf::Window& gameWindow);
+		~GLRenderer();
+		void BeginDraw(glm::vec3 clearColor);
+		void EndDraw();
 		
 	};
 }

@@ -1,12 +1,22 @@
 #ifndef Model_H
 #define Model_H
 
-class Model
+#include <string>
+#include <vector>
+
+#include "mesh.h"
+
+namespace OGI
 {
-private:
-public:
-	Model();
-	~Model();
-};
+	class Model
+	{
+	private:
+		std::vector<OGI::Mesh> _meshes;
+	public:
+		Model();
+		~Model();
+		void Load(std::string filePath);
+	};
+}
 
 #endif //Model_H

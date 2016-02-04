@@ -96,7 +96,7 @@ namespace OGI
 		
 	}
 	
-	void Camera::FreeFlyControl(const sf::Window& window, sf::Vector2i windowCenterPos, sf::Time elapsedTime)
+	void Camera::FreeFlyControl(const sf::Window& window, sf::Time elapsedTime)
 	{
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
@@ -114,6 +114,9 @@ namespace OGI
 		{
 			Move(OGI::FORWARD, elapsedTime.asSeconds());
 		}
+		
+		sf::Vector2u screenSize = window.getSize();
+		sf::Vector2i windowCenterPos(screenSize.x/2,screenSize.y/2);
 		
 		sf::Vector2i mouseOffset = sf::Mouse::getPosition(window) - windowCenterPos;
 		

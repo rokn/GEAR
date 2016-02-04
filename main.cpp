@@ -1,8 +1,8 @@
-#include "engine.h"
+#include "lightscene.h"
 
 int main()
 {
-    Engine game;
+    OGI::LightScene game;
 	int exitCode = game.Run();
     return exitCode;
 }

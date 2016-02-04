@@ -1,12 +1,14 @@
 #include "model.h"
 
-
-Model::Model()
+namespace OGI
 {
-	
-}
+	Model::Model()
+	{
+		
+	}
 
-Model::~Model()
-{
-	
+	Model::~Model()
+	{
+		
+	}
 }

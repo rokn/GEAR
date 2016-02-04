@@ -62,7 +62,7 @@ AS       := F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=F:\Programs\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/engine.cpp$(ObjectSuffix) $(IntermediateDirectory)/shader.cpp$(ObjectSuffix) $(IntermediateDirectory)/camera.cpp$(ObjectSuffix) $(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix) $(IntermediateDirectory)/scene.cpp$(ObjectSuffix) $(IntermediateDirectory)/mesh.cpp$(ObjectSuffix) $(IntermediateDirectory)/model.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/engine.cpp$(ObjectSuffix) $(IntermediateDirectory)/shader.cpp$(ObjectSuffix) $(IntermediateDirectory)/camera.cpp$(ObjectSuffix) $(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix) $(IntermediateDirectory)/scene.cpp$(ObjectSuffix) $(IntermediateDirectory)/mesh.cpp$(ObjectSuffix) $(IntermediateDirectory)/model.cpp$(ObjectSuffix) $(IntermediateDirectory)/lightscene.cpp$(ObjectSuffix) 
 
 
 
@@ -156,6 +156,14 @@ $(IntermediateDirectory)/model.cpp$(DependSuffix): model.cpp
 
 $(IntermediateDirectory)/model.cpp$(PreprocessSuffix): model.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/model.cpp$(PreprocessSuffix) "model.cpp"
+
+$(IntermediateDirectory)/lightscene.cpp$(ObjectSuffix): lightscene.cpp $(IntermediateDirectory)/lightscene.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/lightscene.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/lightscene.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/lightscene.cpp$(DependSuffix): lightscene.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/lightscene.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/lightscene.cpp$(DependSuffix) -MM "lightscene.cpp"
+
+$(IntermediateDirectory)/lightscene.cpp$(PreprocessSuffix): lightscene.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/lightscene.cpp$(PreprocessSuffix) "lightscene.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

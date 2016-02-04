@@ -1,1 +1,1 @@
-./Debug/main.cpp.o ./Debug/engine.cpp.o ./Debug/shader.cpp.o ./Debug/camera.cpp.o ./Debug/glrenderer.cpp.o ./Debug/scene.cpp.o ./Debug/mesh.cpp.o ./Debug/model.cpp.o   
+./Debug/main.cpp.o ./Debug/engine.cpp.o ./Debug/shader.cpp.o ./Debug/camera.cpp.o ./Debug/glrenderer.cpp.o ./Debug/scene.cpp.o ./Debug/mesh.cpp.o ./Debug/model.cpp.o ./Debug/lightscene.cpp.o   

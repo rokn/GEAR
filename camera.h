@@ -58,7 +58,7 @@ namespace OGI
 		glm::mat4 GetViewMatrix() const;
 		glm::mat4 GetProjectionMatrix() const;
 		void SetMoveSpeed(GLfloat newMoveSpeed);
-		void FreeFlyControl(const sf::Window& window, sf::Vector2i windowCenterPos, sf::Time elapsedTime);
+		void FreeFlyControl(const sf::Window& window, sf::Time elapsedTime);
 		
 	private:
 		void UpdateDirection();

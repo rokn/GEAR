@@ -11,6 +11,7 @@
     <File Name="scene.cpp"/>
     <File Name="mesh.cpp"/>
     <File Name="model.cpp"/>
+    <File Name="lightscene.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
     <File Name="engine.h"/>
@@ -21,6 +22,7 @@
     <File Name="scene.h"/>
     <File Name="model.h"/>
     <File Name="mesh.h"/>
+    <File Name="lightscene.h"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Shaders">
     <File Name="Debug/MyFragmentShader.fs"/>
