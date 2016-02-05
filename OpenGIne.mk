@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=amind
-Date                   :=04/02/2016
+Date                   :=06/02/2016
 CodeLitePath           :="F:\Programs\CodeLite"
 LinkerName             :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/g++.exe
 SharedObjectLinkerName :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/g++.exe -shared -fPIC
@@ -62,7 +62,8 @@ AS       := F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=F:\Programs\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/engine.cpp$(ObjectSuffix) $(IntermediateDirectory)/shader.cpp$(ObjectSuffix) $(IntermediateDirectory)/camera.cpp$(ObjectSuffix) $(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix) $(IntermediateDirectory)/scene.cpp$(ObjectSuffix) $(IntermediateDirectory)/mesh.cpp$(ObjectSuffix) $(IntermediateDirectory)/model.cpp$(ObjectSuffix) $(IntermediateDirectory)/lightscene.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/engine.cpp$(ObjectSuffix) $(IntermediateDirectory)/shader.cpp$(ObjectSuffix) $(IntermediateDirectory)/camera.cpp$(ObjectSuffix) $(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix) $(IntermediateDirectory)/scene.cpp$(ObjectSuffix) $(IntermediateDirectory)/mesh.cpp$(ObjectSuffix) $(IntermediateDirectory)/model.cpp$(ObjectSuffix) $(IntermediateDirectory)/lightscene.cpp$(ObjectSuffix) $(IntermediateDirectory)/cube.cpp$(ObjectSuffix) \
+	$(IntermediateDirectory)/resourcemanager.cpp$(ObjectSuffix) 
 
 
 
@@ -164,6 +165,22 @@ $(IntermediateDirectory)/lightscene.cpp$(DependSuffix): lightscene.cpp
 
 $(IntermediateDirectory)/lightscene.cpp$(PreprocessSuffix): lightscene.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/lightscene.cpp$(PreprocessSuffix) "lightscene.cpp"
+
+$(IntermediateDirectory)/cube.cpp$(ObjectSuffix): cube.cpp $(IntermediateDirectory)/cube.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/cube.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/cube.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/cube.cpp$(DependSuffix): cube.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/cube.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/cube.cpp$(DependSuffix) -MM "cube.cpp"
+
+$(IntermediateDirectory)/cube.cpp$(PreprocessSuffix): cube.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/cube.cpp$(PreprocessSuffix) "cube.cpp"
+
+$(IntermediateDirectory)/resourcemanager.cpp$(ObjectSuffix): resourcemanager.cpp $(IntermediateDirectory)/resourcemanager.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/OpenGIne/resourcemanager.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/resourcemanager.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/resourcemanager.cpp$(DependSuffix): resourcemanager.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/resourcemanager.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/resourcemanager.cpp$(DependSuffix) -MM "resourcemanager.cpp"
+
+$(IntermediateDirectory)/resourcemanager.cpp$(PreprocessSuffix): resourcemanager.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/resourcemanager.cpp$(PreprocessSuffix) "resourcemanager.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

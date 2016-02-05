@@ -23,6 +23,7 @@ namespace OGI
 			Shader(std::string vertexPath, std::string fragmentPath);
 			~Shader();
 			GLuint GetProgram() const;
+			GLuint GetUniLoc(const char* name) const;
 			void Use();
 	};
 }

@@ -12,6 +12,8 @@
     <File Name="mesh.cpp"/>
     <File Name="model.cpp"/>
     <File Name="lightscene.cpp"/>
+    <File Name="cube.cpp"/>
+    <File Name="resourcemanager.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
     <File Name="engine.h"/>
@@ -23,10 +25,13 @@
     <File Name="model.h"/>
     <File Name="mesh.h"/>
     <File Name="lightscene.h"/>
+    <File Name="cube.h"/>
+    <File Name="resourcemanager.h"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Shaders">
-    <File Name="Debug/MyFragmentShader.fs"/>
-    <File Name="Debug/MyVertexShader.vs"/>
+    <File Name="Shaders/LampFragmentShader.fs"/>
+    <File Name="Shaders/LightFragmentShader.fs" ExcludeProjConfig=""/>
+    <File Name="Shaders/LightVertexShader.vs"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
@@ -125,4 +130,5 @@
       </Completion>
     </Configuration>
   </Settings>
+  <VirtualDirectory Name="Images"/>
 </CodeLite_Project>

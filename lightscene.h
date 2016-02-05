@@ -5,6 +5,7 @@
 #include "mesh.h"
 #include "shader.h"
 #include "glrenderer.h"
+#include "cube.h"
 
 namespace OGI
 {
@@ -12,10 +13,21 @@ namespace OGI
 	{
 	private:
 		bool wireframeMode;
-		OGI::Mesh *mesh;
-		OGI::Shader *shader;
+		OGI::Cube *_mesh;
+		OGI::Mesh *_lamp;
+		OGI::Shader *_objectShader;
+		OGI::Shader *_lampShader;
 		OGI::Camera *_mainCamera;
 		OGI::GLRenderer *_renderer;
+		GLuint _objectShaderModelUniLoc;
+		GLuint _objectShaderViewUniLoc;
+		GLuint _objectShaderProjUniLoc;
+		GLuint _lampShaderModelUniLoc;
+		GLuint _lampShaderViewUniLoc;
+		GLuint _lampShaderProjUniLoc;
+		glm::mat4 _objectModelMat;
+		glm::vec3 _lampPos;
+		
 		
 	public:
 		LightScene();

@@ -74,6 +74,11 @@ sf::Window& Engine::GetWindow()
 	return _mainWindow;
 }
 
+const sf::Time Engine::GetRuntime()
+{
+	return _runtimeClock.getElapsedTime();
+}
+
 void Engine::HandleEvent(sf::Event windowEvent)
 {
 	switch(windowEvent.type)
@@ -117,18 +122,3 @@ void Engine::Exit(int code)
 	_exitCode = code;
 	_running = false;
 }
-
-
-//    glGenTextures(1, &texture1);
-//    glBindTexture(GL_TEXTURE_2D, texture1); // All upcoming GL_TEXTURE_2D operations now have effect on our texture object
-//    // Set our texture parameters
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// Set texture wrapping to GL_REPEAT
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-//    // Set texture filtering
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//    // Load, create texture and generate mipmaps
-//    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.getSize().x, image.getSize().y, 0, GL_RGBA, GL_UNSIGNED_BYTE, image.getPixelsPtr());
-//    glGenerateMipmap(GL_TEXTURE_2D);
-//    glBindTexture(GL_TEXTURE_2D, 0); // Unbind texture when done, so we won't accidentily mess up our texture.
-//	

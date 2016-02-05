@@ -18,6 +18,7 @@ public:
     Engine();
     virtual ~Engine();
 	int Run();
+	const sf::Time GetRuntime();
 	void Exit(int code = 0);
 	
 protected:

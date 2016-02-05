@@ -82,7 +82,15 @@ namespace OGI
 		_moveSpeed = newMoveSpeed;
 	}
 	
+	glm::vec3 Camera::GetPosition() const
+	{
+		return _position;
+	}
 	
+	glm::vec3 Camera::GetFrontVec() const
+	{
+		return _forward;
+	}
 	
 	void Camera::UpdateDirection()
 	{

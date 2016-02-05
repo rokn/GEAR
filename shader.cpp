@@ -29,6 +29,11 @@ namespace OGI
 		return _program;
 	}
 	
+	GLuint Shader::GetUniLoc(const char * name) const
+	{
+		return glGetUniformLocation(GetProgram(),name);
+	}
+	
 	void Shader::Use()
 	{
 		glUseProgram(_program);

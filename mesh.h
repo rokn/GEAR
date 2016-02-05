@@ -3,6 +3,7 @@
 
 #include "shader.h"
 
+#include <GL/glew.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -15,6 +16,7 @@ namespace OGI
 	struct Vertex
 	{
 		glm::vec3 Position;
+		glm::vec3 Normal;
 		glm::vec2 TexCoords;
 	};
 	

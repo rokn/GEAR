@@ -68,8 +68,6 @@ namespace OGI
 		glGenBuffers(1, &_ebo);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _ebo);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, _indices.size() * sizeof(GLuint), &_indices[0], GL_STATIC_DRAW);
-		std::cout << _indices.size()<<std::endl;
-		std::cout << _vertices.size()<<std::endl;
 		
 		//Generate VBO
 		glGenBuffers(1, &_vbo);
@@ -77,12 +75,16 @@ namespace OGI
 		glBufferData(GL_ARRAY_BUFFER, _vertices.size() * sizeof(Vertex), &_vertices[0], GL_STATIC_DRAW);
 		
 		//Position
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)offsetof(Vertex, Position));
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)offsetof(Vertex, Position));
 		glEnableVertexAttribArray(0);
 		
 		//Tex coords
-		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)offsetof(Vertex, TexCoords));
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)offsetof(Vertex, Normal));
 		glEnableVertexAttribArray(1);
+		
+		//Tex coords
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)offsetof(Vertex, TexCoords));
+		glEnableVertexAttribArray(2);
 		
 		glBindVertexArray(0);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
