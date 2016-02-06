@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=amind
-Date                   :=06/02/2016
+Date                   :=07/02/2016
 CodeLitePath           :="F:\Programs\CodeLite"
 LinkerName             :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/g++.exe
 SharedObjectLinkerName :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/g++.exe -shared -fPIC
@@ -37,7 +37,7 @@ PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
 RcCompilerName         :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/windres.exe
-LinkOptions            :=  -lsfml-graphics-s-d -lsfml-window-s-d -lsfml-system-s-d -lwinmm -lgdi32 -ljpeg -lfreetype -lglew32s -lopengl32
+LinkOptions            :=  -lsfml-graphics-s-d -lsfml-window-s-d -lsfml-system-s-d -lwinmm -lgdi32 -ljpeg -lfreetype -lglew32s -lopengl32 
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)../../Dependencies/include 
 IncludePCH             := 
 RcIncludePath          := 
@@ -80,6 +80,14 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
+
+PostBuild:
+	@echo Executing Post Build commands ...
+	rm ./Debug/*.o
+	rm ./Debug/*.d
+	rm ./Debug/.d
+	C:\Ruby22-x64\bin\ruby.exe F:/RubyScripts/copyToOutput.rb Content ./Debug OpenGIne.project
+	@echo Done
 
 MakeIntermediateDirs:
 	@$(MakeDirCommand) "./Debug"

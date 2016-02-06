@@ -28,10 +28,16 @@
     <File Name="cube.h"/>
     <File Name="resourcemanager.h"/>
   </VirtualDirectory>
-  <VirtualDirectory Name="Shaders">
-    <File Name="Shaders/LampFragmentShader.fs"/>
-    <File Name="Shaders/LightFragmentShader.fs" ExcludeProjConfig=""/>
-    <File Name="Shaders/LightVertexShader.vs"/>
+  <VirtualDirectory Name="Content">
+    <VirtualDirectory Name="Shaders">
+      <File Name="Content/Shaders/LampFragmentShader.fs"/>
+      <File Name="Content/Shaders/LightFragmentShader.fs" ExcludeProjConfig=""/>
+      <File Name="Content/Shaders/LightVertexShader.vs"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Images">
+      <File Name="Content/Images/containerDiffuse.png" ExcludeProjConfig=""/>
+      <File Name="Content/Images/containerSpecular.png" ExcludeProjConfig=""/>
+    </VirtualDirectory>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
@@ -50,7 +56,7 @@
         <Preprocessor Value="SFML_STATIC"/>
         <Preprocessor Value="GLEW_STATIC"/>
       </Compiler>
-      <Linker Options="-lsfml-graphics-s-d;-lsfml-window-s-d;-lsfml-system-s-d;-lwinmm;-lgdi32;-ljpeg;-lfreetype;-lglew32s;-lopengl32" Required="yes">
+      <Linker Options="-lsfml-graphics-s-d;-lsfml-window-s-d;-lsfml-system-s-d;-lwinmm;-lgdi32;-ljpeg;-lfreetype;-lglew32s;-lopengl32;" Required="yes">
         <LibraryPath Value="../../Dependencies/lib"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
@@ -64,7 +70,12 @@
         <StartupCommands/>
       </Debugger>
       <PreBuild/>
-      <PostBuild/>
+      <PostBuild>
+        <Command Enabled="yes">rm $(IntermediateDirectory)/*.o</Command>
+        <Command Enabled="yes">rm $(IntermediateDirectory)/*.d</Command>
+        <Command Enabled="yes">rm $(IntermediateDirectory)/.d</Command>
+        <Command Enabled="yes">C:\Ruby22-x64\bin\ruby.exe F:/RubyScripts/copyToOutput.rb Content $(IntermediateDirectory) $(ProjectName).project</Command>
+      </PostBuild>
       <CustomBuild Enabled="no">
         <RebuildCommand/>
         <CleanCommand/>
@@ -89,12 +100,12 @@
     <Configuration Name="Release" CompilerType="MinGW ( gcc.exe (tdm-1) 4.9.2 )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-O2;-Wall" C_Options="-O2;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
-        <IncludePath Value="F:/Google Drive/Programming/SFML/SFML-2.3.2GCC4.8.1/include"/>
+        <IncludePath Value="../../Dependencies/include"/>
         <Preprocessor Value="NDEBUG"/>
         <Preprocessor Value="SFML_STATIC"/>
       </Compiler>
-      <Linker Options="-lsfml-graphics-s;-lsfml-window-s;-lsfml-audio-s;-lsfml-network-s;-lsfml-system-s;-lopengl32;-lfreetype;-ljpeg;-lwinmm;-lgdi32;-lopenal32;-lws2_32" Required="yes">
-        <LibraryPath Value="F:/Google Drive/Programming/SFML/SFML-2.3.2GCC4.8.1/lib"/>
+      <Linker Options="-lglew32s;-lsfml-graphics-s;-lsfml-window-s;-lsfml-system-s;-lwinmm;-lgdi32;-ljpeg;-lfreetype;-lopengl32;" Required="yes">
+        <LibraryPath Value="../../Dependencies/lib"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Release" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
@@ -130,5 +141,4 @@
       </Completion>
     </Configuration>
   </Settings>
-  <VirtualDirectory Name="Images"/>
 </CodeLite_Project>
