@@ -38,12 +38,12 @@ MakeDirCommand         :=makedir
 RcCmpOptions           := 
 RcCompilerName         :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/windres.exe
 LinkOptions            :=  -lsfml-graphics-s-d -lsfml-window-s-d -lsfml-system-s-d -lwinmm -lgdi32 -ljpeg -lfreetype -lglew32s -lopengl32 
-IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)../../Dependencies/include 
+IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)./Dependencies/include $(IncludeSwitch)./include 
 IncludePCH             := 
 RcIncludePath          := 
 Libs                   := 
 ArLibs                 :=  
-LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)../../Dependencies/lib 
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)./Dependencies/lib 
 
 ##
 ## Common variables
@@ -62,8 +62,8 @@ AS       := F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=F:\Programs\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/engine.cpp$(ObjectSuffix) $(IntermediateDirectory)/shader.cpp$(ObjectSuffix) $(IntermediateDirectory)/camera.cpp$(ObjectSuffix) $(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix) $(IntermediateDirectory)/scene.cpp$(ObjectSuffix) $(IntermediateDirectory)/mesh.cpp$(ObjectSuffix) $(IntermediateDirectory)/model.cpp$(ObjectSuffix) $(IntermediateDirectory)/lightscene.cpp$(ObjectSuffix) $(IntermediateDirectory)/cube.cpp$(ObjectSuffix) \
-	$(IntermediateDirectory)/resourcemanager.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/src_camera.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_cube.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_engine.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_glrenderer.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_lightscene.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_mesh.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_model.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_resourcemanager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_scene.cpp$(ObjectSuffix) \
+	$(IntermediateDirectory)/src_shader.cpp$(ObjectSuffix) 
 
 
 
@@ -86,7 +86,7 @@ PostBuild:
 	rm ./Debug/*.o
 	rm ./Debug/*.d
 	rm ./Debug/.d
-	C:\Ruby22-x64\bin\ruby.exe F:/RubyScripts/copyToOutput.rb Content ./Debug GEAR.project
+	copyToOutput Content ./Debug GEAR.project
 	@echo Done
 
 MakeIntermediateDirs:
@@ -102,93 +102,93 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM "main.cpp"
+$(IntermediateDirectory)/src_camera.cpp$(ObjectSuffix): src/camera.cpp $(IntermediateDirectory)/src_camera.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/src/camera.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_camera.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_camera.cpp$(DependSuffix): src/camera.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_camera.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_camera.cpp$(DependSuffix) -MM "src/camera.cpp"
 
-$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) "main.cpp"
+$(IntermediateDirectory)/src_camera.cpp$(PreprocessSuffix): src/camera.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_camera.cpp$(PreprocessSuffix) "src/camera.cpp"
 
-$(IntermediateDirectory)/engine.cpp$(ObjectSuffix): engine.cpp $(IntermediateDirectory)/engine.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/engine.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/engine.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/engine.cpp$(DependSuffix): engine.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/engine.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/engine.cpp$(DependSuffix) -MM "engine.cpp"
+$(IntermediateDirectory)/src_cube.cpp$(ObjectSuffix): src/cube.cpp $(IntermediateDirectory)/src_cube.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/src/cube.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_cube.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_cube.cpp$(DependSuffix): src/cube.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_cube.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_cube.cpp$(DependSuffix) -MM "src/cube.cpp"
 
-$(IntermediateDirectory)/engine.cpp$(PreprocessSuffix): engine.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/engine.cpp$(PreprocessSuffix) "engine.cpp"
+$(IntermediateDirectory)/src_cube.cpp$(PreprocessSuffix): src/cube.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_cube.cpp$(PreprocessSuffix) "src/cube.cpp"
 
-$(IntermediateDirectory)/shader.cpp$(ObjectSuffix): shader.cpp $(IntermediateDirectory)/shader.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/shader.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/shader.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/shader.cpp$(DependSuffix): shader.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/shader.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/shader.cpp$(DependSuffix) -MM "shader.cpp"
+$(IntermediateDirectory)/src_engine.cpp$(ObjectSuffix): src/engine.cpp $(IntermediateDirectory)/src_engine.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/src/engine.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_engine.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_engine.cpp$(DependSuffix): src/engine.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_engine.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_engine.cpp$(DependSuffix) -MM "src/engine.cpp"
 
-$(IntermediateDirectory)/shader.cpp$(PreprocessSuffix): shader.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/shader.cpp$(PreprocessSuffix) "shader.cpp"
+$(IntermediateDirectory)/src_engine.cpp$(PreprocessSuffix): src/engine.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_engine.cpp$(PreprocessSuffix) "src/engine.cpp"
 
-$(IntermediateDirectory)/camera.cpp$(ObjectSuffix): camera.cpp $(IntermediateDirectory)/camera.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/camera.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/camera.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/camera.cpp$(DependSuffix): camera.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/camera.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/camera.cpp$(DependSuffix) -MM "camera.cpp"
+$(IntermediateDirectory)/src_glrenderer.cpp$(ObjectSuffix): src/glrenderer.cpp $(IntermediateDirectory)/src_glrenderer.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/src/glrenderer.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_glrenderer.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_glrenderer.cpp$(DependSuffix): src/glrenderer.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_glrenderer.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_glrenderer.cpp$(DependSuffix) -MM "src/glrenderer.cpp"
 
-$(IntermediateDirectory)/camera.cpp$(PreprocessSuffix): camera.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/camera.cpp$(PreprocessSuffix) "camera.cpp"
+$(IntermediateDirectory)/src_glrenderer.cpp$(PreprocessSuffix): src/glrenderer.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_glrenderer.cpp$(PreprocessSuffix) "src/glrenderer.cpp"
 
-$(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix): glrenderer.cpp $(IntermediateDirectory)/glrenderer.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/glrenderer.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/glrenderer.cpp$(DependSuffix): glrenderer.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/glrenderer.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/glrenderer.cpp$(DependSuffix) -MM "glrenderer.cpp"
+$(IntermediateDirectory)/src_lightscene.cpp$(ObjectSuffix): src/lightscene.cpp $(IntermediateDirectory)/src_lightscene.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/src/lightscene.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_lightscene.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_lightscene.cpp$(DependSuffix): src/lightscene.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_lightscene.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_lightscene.cpp$(DependSuffix) -MM "src/lightscene.cpp"
 
-$(IntermediateDirectory)/glrenderer.cpp$(PreprocessSuffix): glrenderer.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/glrenderer.cpp$(PreprocessSuffix) "glrenderer.cpp"
+$(IntermediateDirectory)/src_lightscene.cpp$(PreprocessSuffix): src/lightscene.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_lightscene.cpp$(PreprocessSuffix) "src/lightscene.cpp"
 
-$(IntermediateDirectory)/scene.cpp$(ObjectSuffix): scene.cpp $(IntermediateDirectory)/scene.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/scene.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/scene.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/scene.cpp$(DependSuffix): scene.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/scene.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/scene.cpp$(DependSuffix) -MM "scene.cpp"
+$(IntermediateDirectory)/src_main.cpp$(ObjectSuffix): src/main.cpp $(IntermediateDirectory)/src_main.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/src/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_main.cpp$(DependSuffix): src/main.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_main.cpp$(DependSuffix) -MM "src/main.cpp"
 
-$(IntermediateDirectory)/scene.cpp$(PreprocessSuffix): scene.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/scene.cpp$(PreprocessSuffix) "scene.cpp"
+$(IntermediateDirectory)/src_main.cpp$(PreprocessSuffix): src/main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_main.cpp$(PreprocessSuffix) "src/main.cpp"
 
-$(IntermediateDirectory)/mesh.cpp$(ObjectSuffix): mesh.cpp $(IntermediateDirectory)/mesh.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/mesh.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/mesh.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/mesh.cpp$(DependSuffix): mesh.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/mesh.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/mesh.cpp$(DependSuffix) -MM "mesh.cpp"
+$(IntermediateDirectory)/src_mesh.cpp$(ObjectSuffix): src/mesh.cpp $(IntermediateDirectory)/src_mesh.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/src/mesh.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_mesh.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_mesh.cpp$(DependSuffix): src/mesh.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_mesh.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_mesh.cpp$(DependSuffix) -MM "src/mesh.cpp"
 
-$(IntermediateDirectory)/mesh.cpp$(PreprocessSuffix): mesh.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/mesh.cpp$(PreprocessSuffix) "mesh.cpp"
+$(IntermediateDirectory)/src_mesh.cpp$(PreprocessSuffix): src/mesh.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_mesh.cpp$(PreprocessSuffix) "src/mesh.cpp"
 
-$(IntermediateDirectory)/model.cpp$(ObjectSuffix): model.cpp $(IntermediateDirectory)/model.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/model.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/model.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/model.cpp$(DependSuffix): model.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/model.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/model.cpp$(DependSuffix) -MM "model.cpp"
+$(IntermediateDirectory)/src_model.cpp$(ObjectSuffix): src/model.cpp $(IntermediateDirectory)/src_model.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/src/model.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_model.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_model.cpp$(DependSuffix): src/model.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_model.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_model.cpp$(DependSuffix) -MM "src/model.cpp"
 
-$(IntermediateDirectory)/model.cpp$(PreprocessSuffix): model.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/model.cpp$(PreprocessSuffix) "model.cpp"
+$(IntermediateDirectory)/src_model.cpp$(PreprocessSuffix): src/model.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_model.cpp$(PreprocessSuffix) "src/model.cpp"
 
-$(IntermediateDirectory)/lightscene.cpp$(ObjectSuffix): lightscene.cpp $(IntermediateDirectory)/lightscene.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/lightscene.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/lightscene.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/lightscene.cpp$(DependSuffix): lightscene.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/lightscene.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/lightscene.cpp$(DependSuffix) -MM "lightscene.cpp"
+$(IntermediateDirectory)/src_resourcemanager.cpp$(ObjectSuffix): src/resourcemanager.cpp $(IntermediateDirectory)/src_resourcemanager.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/src/resourcemanager.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_resourcemanager.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_resourcemanager.cpp$(DependSuffix): src/resourcemanager.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_resourcemanager.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_resourcemanager.cpp$(DependSuffix) -MM "src/resourcemanager.cpp"
 
-$(IntermediateDirectory)/lightscene.cpp$(PreprocessSuffix): lightscene.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/lightscene.cpp$(PreprocessSuffix) "lightscene.cpp"
+$(IntermediateDirectory)/src_resourcemanager.cpp$(PreprocessSuffix): src/resourcemanager.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_resourcemanager.cpp$(PreprocessSuffix) "src/resourcemanager.cpp"
 
-$(IntermediateDirectory)/cube.cpp$(ObjectSuffix): cube.cpp $(IntermediateDirectory)/cube.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/cube.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/cube.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/cube.cpp$(DependSuffix): cube.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/cube.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/cube.cpp$(DependSuffix) -MM "cube.cpp"
+$(IntermediateDirectory)/src_scene.cpp$(ObjectSuffix): src/scene.cpp $(IntermediateDirectory)/src_scene.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/src/scene.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_scene.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_scene.cpp$(DependSuffix): src/scene.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_scene.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_scene.cpp$(DependSuffix) -MM "src/scene.cpp"
 
-$(IntermediateDirectory)/cube.cpp$(PreprocessSuffix): cube.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/cube.cpp$(PreprocessSuffix) "cube.cpp"
+$(IntermediateDirectory)/src_scene.cpp$(PreprocessSuffix): src/scene.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_scene.cpp$(PreprocessSuffix) "src/scene.cpp"
 
-$(IntermediateDirectory)/resourcemanager.cpp$(ObjectSuffix): resourcemanager.cpp $(IntermediateDirectory)/resourcemanager.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/resourcemanager.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/resourcemanager.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/resourcemanager.cpp$(DependSuffix): resourcemanager.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/resourcemanager.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/resourcemanager.cpp$(DependSuffix) -MM "resourcemanager.cpp"
+$(IntermediateDirectory)/src_shader.cpp$(ObjectSuffix): src/shader.cpp $(IntermediateDirectory)/src_shader.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Google Drive/Programming/OpenGL/CodeLite/GEAR/src/shader.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_shader.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_shader.cpp$(DependSuffix): src/shader.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_shader.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_shader.cpp$(DependSuffix) -MM "src/shader.cpp"
 
-$(IntermediateDirectory)/resourcemanager.cpp$(PreprocessSuffix): resourcemanager.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/resourcemanager.cpp$(PreprocessSuffix) "resourcemanager.cpp"
+$(IntermediateDirectory)/src_shader.cpp$(PreprocessSuffix): src/shader.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_shader.cpp$(PreprocessSuffix) "src/shader.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

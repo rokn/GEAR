@@ -1,1 +1,1 @@
-./Debug/main.cpp.o ./Debug/engine.cpp.o ./Debug/shader.cpp.o ./Debug/camera.cpp.o ./Debug/glrenderer.cpp.o ./Debug/scene.cpp.o ./Debug/mesh.cpp.o ./Debug/model.cpp.o ./Debug/lightscene.cpp.o ./Debug/cube.cpp.o ./Debug/resourcemanager.cpp.o   
+./Debug/src_camera.cpp.o ./Debug/src_cube.cpp.o ./Debug/src_engine.cpp.o ./Debug/src_glrenderer.cpp.o ./Debug/src_lightscene.cpp.o ./Debug/src_main.cpp.o ./Debug/src_mesh.cpp.o ./Debug/src_model.cpp.o ./Debug/src_resourcemanager.cpp.o ./Debug/src_scene.cpp.o ./Debug/src_shader.cpp.o   

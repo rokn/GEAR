@@ -3,30 +3,30 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
-    <File Name="main.cpp"/>
-    <File Name="engine.cpp"/>
-    <File Name="shader.cpp"/>
-    <File Name="camera.cpp"/>
-    <File Name="glrenderer.cpp"/>
-    <File Name="scene.cpp"/>
-    <File Name="mesh.cpp"/>
-    <File Name="model.cpp"/>
-    <File Name="lightscene.cpp"/>
-    <File Name="cube.cpp"/>
-    <File Name="resourcemanager.cpp"/>
+    <File Name="src/camera.cpp"/>
+    <File Name="src/cube.cpp"/>
+    <File Name="src/engine.cpp"/>
+    <File Name="src/glrenderer.cpp"/>
+    <File Name="src/lightscene.cpp"/>
+    <File Name="src/main.cpp"/>
+    <File Name="src/mesh.cpp"/>
+    <File Name="src/model.cpp"/>
+    <File Name="src/resourcemanager.cpp"/>
+    <File Name="src/scene.cpp"/>
+    <File Name="src/shader.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
-    <File Name="engine.h"/>
-    <File Name="shader.h"/>
-    <File Name="camera.h"/>
-    <File Name="direction.h"/>
-    <File Name="glrenderer.h"/>
-    <File Name="scene.h"/>
-    <File Name="model.h"/>
-    <File Name="mesh.h"/>
-    <File Name="lightscene.h"/>
-    <File Name="cube.h"/>
-    <File Name="resourcemanager.h"/>
+    <File Name="include/camera.h"/>
+    <File Name="include/cube.h"/>
+    <File Name="include/direction.h"/>
+    <File Name="include/engine.h"/>
+    <File Name="include/glrenderer.h"/>
+    <File Name="include/lightscene.h"/>
+    <File Name="include/mesh.h"/>
+    <File Name="include/model.h"/>
+    <File Name="include/resourcemanager.h"/>
+    <File Name="include/scene.h"/>
+    <File Name="include/shader.h"/>
   </VirtualDirectory>
   <VirtualDirectory Name="Content">
     <VirtualDirectory Name="Shaders">
@@ -52,12 +52,13 @@
     <Configuration Name="Debug" CompilerType="MinGW ( gcc.exe (tdm-1) 4.9.2 )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-g;-O0;-Wall" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
-        <IncludePath Value="../../Dependencies/include"/>
+        <IncludePath Value="./Dependencies/include"/>
+        <IncludePath Value="./include"/>
         <Preprocessor Value="SFML_STATIC"/>
         <Preprocessor Value="GLEW_STATIC"/>
       </Compiler>
       <Linker Options="-lsfml-graphics-s-d;-lsfml-window-s-d;-lsfml-system-s-d;-lwinmm;-lgdi32;-ljpeg;-lfreetype;-lglew32s;-lopengl32;" Required="yes">
-        <LibraryPath Value="../../Dependencies/lib"/>
+        <LibraryPath Value="./Dependencies/lib"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
@@ -74,7 +75,7 @@
         <Command Enabled="yes">rm $(IntermediateDirectory)/*.o</Command>
         <Command Enabled="yes">rm $(IntermediateDirectory)/*.d</Command>
         <Command Enabled="yes">rm $(IntermediateDirectory)/.d</Command>
-        <Command Enabled="yes">C:\Ruby22-x64\bin\ruby.exe F:/RubyScripts/copyToOutput.rb Content $(IntermediateDirectory) $(ProjectName).project</Command>
+        <Command Enabled="yes">copyToOutput Content $(IntermediateDirectory) $(ProjectName).project</Command>
       </PostBuild>
       <CustomBuild Enabled="no">
         <RebuildCommand/>
@@ -100,12 +101,12 @@
     <Configuration Name="Release" CompilerType="MinGW ( gcc.exe (tdm-1) 4.9.2 )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-O2;-Wall" C_Options="-O2;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
-        <IncludePath Value="../../Dependencies/include"/>
+        <IncludePath Value="./Dependencies/include"/>
         <Preprocessor Value="NDEBUG"/>
         <Preprocessor Value="SFML_STATIC"/>
       </Compiler>
       <Linker Options="-lglew32s;-lsfml-graphics-s;-lsfml-window-s;-lsfml-system-s;-lwinmm;-lgdi32;-ljpeg;-lfreetype;-lopengl32;" Required="yes">
-        <LibraryPath Value="../../Dependencies/lib"/>
+        <LibraryPath Value="./Dependencies/lib"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Release" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
