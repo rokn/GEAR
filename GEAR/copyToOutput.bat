@@ -1,0 +1,1 @@
+copyToOutput.rb %*
