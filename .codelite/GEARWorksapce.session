@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="F:\Google Drive\Programming\OpenGL\GEAR\GEARWorksapce.workspace">
+  <int Value="2" Name="m_selectedTab"/>
+  <wxString Value="F:\Google Drive\Programming\OpenGL\GEAR\GEARWorksapce.workspace" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="F:\Google Drive\Programming\OpenGL\GEAR\ConfigParser\src\configparser.cpp" Name="FileName"/>
+      <int Value="68" Name="FirstVisibleLine"/>
+      <int Value="78" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\Google Drive\Programming\OpenGL\GEAR\HelperLibrary\include\helper.h" Name="FileName"/>
+      <int Value="44" Name="FirstVisibleLine"/>
+      <int Value="74" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds">
+        <IntVectorItem Value="32"/>
+      </IntVector>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\Google Drive\Programming\OpenGL\GEAR\GEAR\src\lightscene.cpp" Name="FileName"/>
+      <int Value="225" Name="FirstVisibleLine"/>
+      <int Value="239" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="F:\Google Drive\Programming\OpenGL\GEAR\GEAR\src\main.cpp" Name="FileName"/>
+      <int Value="10" Name="FirstVisibleLine"/>
+      <int Value="14" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>

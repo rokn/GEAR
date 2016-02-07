@@ -35,5 +35,5 @@ int main()
 {
     GEAR::LightScene game;
 	int exitCode = game.Run();
-    return 0;
+    return exitCode;
 }

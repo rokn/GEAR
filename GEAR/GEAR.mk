@@ -2,12 +2,12 @@
 ## Auto Generated makefile by CodeLite IDE
 ## any manual changes will be erased      
 ##
-## Debug
+## Release
 ProjectName            :=GEAR
-ConfigurationName      :=Debug
+ConfigurationName      :=Release
 WorkspacePath          := "F:\Google Drive\Programming\OpenGL\GEAR"
 ProjectPath            := "F:\Google Drive\Programming\OpenGL\GEAR\GEAR"
-IntermediateDirectory  :=./Debug
+IntermediateDirectory  :=./Release
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
@@ -28,7 +28,7 @@ LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
 OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
-Preprocessors          :=$(PreprocessorSwitch)SFML_STATIC $(PreprocessorSwitch)GLEW_STATIC 
+Preprocessors          :=$(PreprocessorSwitch)NDEBUG $(PreprocessorSwitch)SFML_STATIC 
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
@@ -37,8 +37,8 @@ PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
 RcCompilerName         :=F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/windres.exe
-LinkOptions            :=  -lsfml-graphics-s-d -lsfml-window-s-d -lsfml-system-s-d -lwinmm -lgdi32 -ljpeg -lfreetype -lglew32s -lopengl32 
-IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)./Dependencies/include $(IncludeSwitch)./include $(IncludeSwitch)../HelperLibrary/include 
+LinkOptions            :=  -lsfml-graphics -lsfml-window -lsfml-system -lwinmm -lgdi32 -ljpeg -lfreetype -lglew32 -lglew32mx -lopengl32
+IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)./include $(IncludeSwitch)./Dependencies/include $(IncludeSwitch)../HelperLibrary/include 
 IncludePCH             := 
 RcIncludePath          := 
 Libs                   := 
@@ -52,8 +52,8 @@ LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)./Dependenci
 AR       := F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/ar.exe rcu
 CXX      := F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/g++.exe
 CC       := F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/gcc.exe
-CXXFLAGS :=  -g -O0 -std=c++11 -Wall $(Preprocessors)
-CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
+CXXFLAGS :=  -O2 -std=c++11 -Wall $(Preprocessors)
+CFLAGS   :=  -O2 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := F:/Programs/MinGW4.9.2/CodeBlocks/MinGW/bin/as.exe
 
@@ -81,20 +81,12 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
-PostBuild:
-	@echo Executing Post Build commands ...
-	rm ./Debug/*.o
-	rm ./Debug/*.d
-	rm ./Debug/.d
-	copyToOutput Content ./Debug GEAR.project
-	@echo Done
-
 MakeIntermediateDirs:
-	@$(MakeDirCommand) "./Debug"
+	@$(MakeDirCommand) "./Release"
 
 
 $(IntermediateDirectory)/.d:
-	@$(MakeDirCommand) "./Debug"
+	@$(MakeDirCommand) "./Release"
 
 PreBuild:
 
@@ -196,6 +188,6 @@ $(IntermediateDirectory)/src_shader.cpp$(PreprocessSuffix): src/shader.cpp
 ## Clean
 ##
 clean:
-	$(RM) -r ./Debug/
+	$(RM) -r ./Release/
 
 

@@ -4,7 +4,7 @@
   <Project Name="ConfigParser" Path="ConfigParser/ConfigParser.project" Active="No"/>
   <Project Name="HelperLibrary" Path="HelperLibrary/HelperLibrary.project" Active="No"/>
   <BuildMatrix>
-    <WorkspaceConfiguration Name="Debug" Selected="yes">
+    <WorkspaceConfiguration Name="Debug" Selected="no">
       <Environment/>
       <Project Name="GEAR" ConfigName="Debug"/>
       <Project Name="ConfigParser" ConfigName="Debug"/>

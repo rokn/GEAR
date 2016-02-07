@@ -9,7 +9,7 @@
     <File Name="src/glrenderer.cpp"/>
     <File Name="src/lightscene.cpp"/>
     <File Name="src/main.cpp"/>
-    <File Name="src/mesh.cpp"/>
+    <File Name="src/mesh.cpp" ExcludeProjConfig=""/>
     <File Name="src/model.cpp"/>
     <File Name="src/resourcemanager.cpp"/>
     <File Name="src/scene.cpp"/>
@@ -100,13 +100,15 @@
       </Completion>
     </Configuration>
     <Configuration Name="Release" CompilerType="MinGW ( gcc.exe (tdm-1) 4.9.2 )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
-      <Compiler Options="-O2;-Wall" C_Options="-O2;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+      <Compiler Options="-O2;-std=c++11;-Wall" C_Options="-O2;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
+        <IncludePath Value="./include"/>
         <IncludePath Value="./Dependencies/include"/>
+        <IncludePath Value="../HelperLibrary/include"/>
         <Preprocessor Value="NDEBUG"/>
         <Preprocessor Value="SFML_STATIC"/>
       </Compiler>
-      <Linker Options="-lglew32s;-lsfml-graphics-s;-lsfml-window-s;-lsfml-system-s;-lwinmm;-lgdi32;-ljpeg;-lfreetype;-lopengl32;" Required="yes">
+      <Linker Options="-lsfml-graphics;-lsfml-window;-lsfml-system;-lwinmm;-lgdi32;-ljpeg;-lfreetype;-lglew32;-lglew32mx;-lopengl32" Required="yes">
         <LibraryPath Value="./Dependencies/lib"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
