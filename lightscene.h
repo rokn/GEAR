@@ -36,18 +36,18 @@
 #include "glrenderer.h"
 #include "cube.h"
 
-namespace OGI
+namespace AGE
 {
 	class LightScene : public Engine
 	{
 	private:
 		bool wireframeMode;
-		OGI::Cube *_mesh;
-		OGI::Mesh *_lamp;
-		OGI::Shader *_objectShader;
-		OGI::Shader *_lampShader;
-		OGI::Camera *_mainCamera;
-		OGI::GLRenderer *_renderer;
+		AGE::Cube *_mesh;
+		AGE::Mesh *_lamp;
+		AGE::Shader *_objectShader;
+		AGE::Shader *_lampShader;
+		AGE::Camera *_mainCamera;
+		AGE::GLRenderer *_renderer;
 		GLuint _objectShaderModelUniLoc;
 		GLuint _objectShaderViewUniLoc;
 		GLuint _objectShaderProjUniLoc;

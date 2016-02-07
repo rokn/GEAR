@@ -40,7 +40,7 @@
 #include <string>
 #include <vector>
 
-namespace OGI
+namespace AGE
 {
 	struct Vertex
 	{
@@ -59,15 +59,15 @@ namespace OGI
 	{
 	public:
 		Mesh(GLfloat* vertices,int vc, GLuint* indices, int ic);
-		Mesh(std::vector<OGI::Vertex> vertices, std::vector<GLuint> indices, std::vector<OGI::Texture> textures);
+		Mesh(std::vector<AGE::Vertex> vertices, std::vector<GLuint> indices, std::vector<AGE::Texture> textures);
 		~Mesh();
 		void Draw(const Shader& shader);
 		static Mesh* MakeCube(float w, float h, float z);
 		
 	private:
-		std::vector<OGI::Vertex> _vertices;
+		std::vector<AGE::Vertex> _vertices;
 		std::vector <GLuint> _indices;
-		std::vector<OGI::Texture> _textures;
+		std::vector<AGE::Texture> _textures;
 		GLuint _vao;
 		GLuint _vbo;
 		GLuint _ebo;

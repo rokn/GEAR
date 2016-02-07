@@ -31,7 +31,7 @@
 
 int main()
 {
-    OGI::LightScene game;
+    AGE::LightScene game;
 	int exitCode = game.Run();
     return exitCode;
 }

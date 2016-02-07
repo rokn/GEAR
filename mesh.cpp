@@ -30,13 +30,13 @@
 #include "mesh.h"
 #include <iostream>
 
-namespace OGI
+namespace AGE
 {
 	Mesh::Mesh(GLfloat* vertices,int vc, GLuint* indices, int ic)
 	{
 		for(unsigned int i = 0;i<vc;i+=3)
 		{
-			OGI::Vertex v;
+			AGE::Vertex v;
 			v.Position.x = vertices[i];
 			v.Position.y = vertices[i+1];
 			v.Position.z = vertices[i+2];
@@ -149,6 +149,6 @@ namespace OGI
 			4,0,7,
 		};
 		
-		return new OGI::Mesh(verts, 24, inds, 36);
+		return new AGE::Mesh(verts, 24, inds, 36);
 	}
 }

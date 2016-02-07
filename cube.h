@@ -32,7 +32,7 @@
 
 #include "shader.h"
 
-namespace OGI
+namespace AGE
 {
 	class Cube
 	{

@@ -32,7 +32,7 @@
 
 #include <GL/glew.h>
 
-namespace OGI
+namespace AGE
 {
 	class ResourceManager
 	{

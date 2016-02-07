@@ -35,12 +35,12 @@
 
 #include "mesh.h"
 
-namespace OGI
+namespace AGE
 {
 	class Model
 	{
 	private:
-		std::vector<OGI::Mesh> _meshes;
+		std::vector<AGE::Mesh> _meshes;
 	public:
 		Model();
 		~Model();

@@ -30,7 +30,7 @@
 #ifndef Direction_H
 #define Direction_H
 
-namespace OGI
+namespace AGE
 {
 	enum Direction
 	{

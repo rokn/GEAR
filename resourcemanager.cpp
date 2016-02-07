@@ -31,7 +31,7 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace OGI
+namespace AGE
 {
 	ResourceManager::ResourceManager()
 	{

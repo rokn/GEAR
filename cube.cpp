@@ -30,9 +30,9 @@
 #include "cube.h"
 
 
-namespace OGI
+namespace AGE
 {
-	OGI::Cube::Cube()
+	AGE::Cube::Cube()
 	{
 		Setup();
 	}
@@ -42,7 +42,7 @@ namespace OGI
 		
 	}
 
-	void OGI::Cube::Setup()
+	void AGE::Cube::Setup()
 	{
 		GLfloat vertices[] = {
 			// Positions           // Normals           // Texture Coords
@@ -113,7 +113,7 @@ namespace OGI
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
-	void OGI::Cube::Draw(const Shader& shader)
+	void AGE::Cube::Draw(const Shader& shader)
 	{
 		glBindVertexArray(_vao);
 		glDrawArrays(GL_TRIANGLES, 0, 36);

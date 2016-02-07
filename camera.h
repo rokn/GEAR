@@ -39,7 +39,7 @@
 #include "direction.h"
 
 
-namespace OGI
+namespace AGE
 {
 	class Camera
 	{

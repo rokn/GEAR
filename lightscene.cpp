@@ -44,7 +44,7 @@
 #define RESOLUTION_HEIGHT 600
 #define FULLSCREEN false
 
-namespace OGI
+namespace AGE
 {
 	LightScene::LightScene()
 	{
@@ -64,13 +64,13 @@ namespace OGI
 
 	void LightScene::Initialize()
 	{
-		_renderer = new OGI::GLRenderer(GetWindow());
-		_mainCamera = new OGI::Camera((GLfloat)RESOLUTION_WIDTH / RESOLUTION_HEIGHT, glm::vec3(0.0f,0.0f,3.0f));
+		_renderer = new AGE::GLRenderer(GetWindow());
+		_mainCamera = new AGE::Camera((GLfloat)RESOLUTION_WIDTH / RESOLUTION_HEIGHT, glm::vec3(0.0f,0.0f,3.0f));
 		
-		_objectShader = new OGI::Shader("Content\\Shaders\\LightVertexShader.vs","Content\\Shaders\\LightFragmentShader.fs");
-		_lampShader = new OGI::Shader("Content\\Shaders\\LightVertexShader.vs","Content\\Shaders\\LampFragmentShader.fs");
-		_mesh = new OGI::Cube();
-		_lamp = OGI::Mesh::MakeCube(0.2f, 0.2f, 0.2f);
+		_objectShader = new AGE::Shader("Content\\Shaders\\LightVertexShader.vs","Content\\Shaders\\LightFragmentShader.fs");
+		_lampShader = new AGE::Shader("Content\\Shaders\\LightVertexShader.vs","Content\\Shaders\\LampFragmentShader.fs");
+		_mesh = new AGE::Cube();
+		_lamp = AGE::Mesh::MakeCube(0.2f, 0.2f, 0.2f);
 		
 		_objectShaderModelUniLoc = _objectShader->GetUniLoc("model");
 		_objectShaderViewUniLoc = _objectShader->GetUniLoc("view");
