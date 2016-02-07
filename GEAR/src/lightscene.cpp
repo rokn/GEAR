@@ -44,7 +44,7 @@
 #define RESOLUTION_HEIGHT 600
 #define FULLSCREEN false
 
-namespace AGE
+namespace GEAR
 {
 	LightScene::LightScene()
 	{
@@ -64,13 +64,13 @@ namespace AGE
 
 	void LightScene::Initialize()
 	{
-		_renderer = new AGE::GLRenderer(GetWindow());
-		_mainCamera = new AGE::Camera((GLfloat)RESOLUTION_WIDTH / RESOLUTION_HEIGHT, glm::vec3(0.0f,0.0f,3.0f));
+		_renderer = new GEAR::GLRenderer(GetWindow());
+		_mainCamera = new GEAR::Camera((GLfloat)RESOLUTION_WIDTH / RESOLUTION_HEIGHT, glm::vec3(0.0f,0.0f,3.0f));
 		
-		_objectShader = new AGE::Shader("Content\\Shaders\\LightVertexShader.vs","Content\\Shaders\\LightFragmentShader.fs");
-		_lampShader = new AGE::Shader("Content\\Shaders\\LightVertexShader.vs","Content\\Shaders\\LampFragmentShader.fs");
-		_mesh = new AGE::Cube();
-		_lamp = AGE::Mesh::MakeCube(0.2f, 0.2f, 0.2f);
+		_objectShader = new GEAR::Shader("Content\\Shaders\\LightVertexShader.vs","Content\\Shaders\\LightFragmentShader.fs");
+		_lampShader = new GEAR::Shader("Content\\Shaders\\LightVertexShader.vs","Content\\Shaders\\LampFragmentShader.fs");
+		_mesh = new GEAR::Cube();
+		_lamp = GEAR::Mesh::MakeCube(0.2f, 0.2f, 0.2f);
 		
 		_objectShaderModelUniLoc = _objectShader->GetUniLoc("model");
 		_objectShaderViewUniLoc = _objectShader->GetUniLoc("view");
@@ -234,10 +234,10 @@ namespace AGE
 	
 	void LightScene::SwitchWireframeMode()
 	{
-		char *cStr = new char[3];
-		itoa(42, cStr, 10);
-		std::string str = cStr;
-		std::cout << str << std::endl;
+//		char *cStr = new char[3];
+//		itoa(42, cStr, 10);
+//		std::string str = cStr;
+//		std::cout << str << std::endl;
 		wireframeMode = !wireframeMode;
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		glUniform1i(glGetUniformLocation(_objectShader->GetProgram(),"wireframeMode"), (int)wireframeMode);

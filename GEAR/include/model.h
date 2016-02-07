@@ -35,12 +35,12 @@
 
 #include "mesh.h"
 
-namespace AGE
+namespace GEAR
 {
 	class Model
 	{
 	private:
-		std::vector<AGE::Mesh> _meshes;
+		std::vector<GEAR::Mesh> _meshes;
 	public:
 		Model();
 		~Model();

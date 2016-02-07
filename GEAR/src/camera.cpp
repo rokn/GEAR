@@ -29,7 +29,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "camera.h"
 
-namespace AGE
+namespace GEAR
 {
 	Camera::Camera(GLfloat aspectRatio, glm::vec3 position, GLfloat moveSpeed, GLfloat fov, glm::vec3 worldUp, GLfloat pitch, GLfloat yaw, GLfloat nearClip, GLfloat farClip)
 	{
@@ -137,19 +137,19 @@ namespace AGE
 	{
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
-			Move(AGE::LEFT, elapsedTime.asSeconds());
+			Move(GEAR::LEFT, elapsedTime.asSeconds());
 		}
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
-			Move(AGE::RIGHT, elapsedTime.asSeconds());
+			Move(GEAR::RIGHT, elapsedTime.asSeconds());
 		}
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		{
-			Move(AGE::BACKWARD, elapsedTime.asSeconds());
+			Move(GEAR::BACKWARD, elapsedTime.asSeconds());
 		}
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
-			Move(AGE::FORWARD, elapsedTime.asSeconds());
+			Move(GEAR::FORWARD, elapsedTime.asSeconds());
 		}
 		
 		sf::Vector2u screenSize = window.getSize();

@@ -31,7 +31,7 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace AGE
+namespace GEAR
 {
 	ResourceManager::ResourceManager()
 	{

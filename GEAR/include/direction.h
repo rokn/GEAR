@@ -30,7 +30,7 @@
 #ifndef Direction_H
 #define Direction_H
 
-namespace AGE
+namespace GEAR
 {
 	enum Direction
 	{

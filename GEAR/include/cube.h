@@ -32,7 +32,7 @@
 
 #include "shader.h"
 
-namespace AGE
+namespace GEAR
 {
 	class Cube
 	{

@@ -40,7 +40,7 @@
 #include <string>
 #include <vector>
 
-namespace AGE
+namespace GEAR
 {
 	struct Vertex
 	{
@@ -59,15 +59,15 @@ namespace AGE
 	{
 	public:
 		Mesh(GLfloat* vertices,int vc, GLuint* indices, int ic);
-		Mesh(std::vector<AGE::Vertex> vertices, std::vector<GLuint> indices, std::vector<AGE::Texture> textures);
+		Mesh(std::vector<GEAR::Vertex> vertices, std::vector<GLuint> indices, std::vector<GEAR::Texture> textures);
 		~Mesh();
 		void Draw(const Shader& shader);
 		static Mesh* MakeCube(float w, float h, float z);
 		
 	private:
-		std::vector<AGE::Vertex> _vertices;
+		std::vector<GEAR::Vertex> _vertices;
 		std::vector <GLuint> _indices;
-		std::vector<AGE::Texture> _textures;
+		std::vector<GEAR::Texture> _textures;
 		GLuint _vao;
 		GLuint _vbo;
 		GLuint _ebo;

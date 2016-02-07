@@ -36,7 +36,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <SFML/Window.hpp>
 
-namespace AGE
+namespace GEAR
 {
 	
 	class GLRenderer

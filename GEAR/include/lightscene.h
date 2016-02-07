@@ -36,18 +36,18 @@
 #include "glrenderer.h"
 #include "cube.h"
 
-namespace AGE
+namespace GEAR
 {
 	class LightScene : public Engine
 	{
 	private:
 		bool wireframeMode;
-		AGE::Cube *_mesh;
-		AGE::Mesh *_lamp;
-		AGE::Shader *_objectShader;
-		AGE::Shader *_lampShader;
-		AGE::Camera *_mainCamera;
-		AGE::GLRenderer *_renderer;
+		GEAR::Cube *_mesh;
+		GEAR::Mesh *_lamp;
+		GEAR::Shader *_objectShader;
+		GEAR::Shader *_lampShader;
+		GEAR::Camera *_mainCamera;
+		GEAR::GLRenderer *_renderer;
 		GLuint _objectShaderModelUniLoc;
 		GLuint _objectShaderViewUniLoc;
 		GLuint _objectShaderProjUniLoc;

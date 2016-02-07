@@ -30,9 +30,9 @@
 #include "cube.h"
 
 
-namespace AGE
+namespace GEAR
 {
-	AGE::Cube::Cube()
+	GEAR::Cube::Cube()
 	{
 		Setup();
 	}
@@ -42,7 +42,7 @@ namespace AGE
 		
 	}
 
-	void AGE::Cube::Setup()
+	void GEAR::Cube::Setup()
 	{
 		GLfloat vertices[] = {
 			// Positions           // Normals           // Texture Coords
@@ -113,7 +113,7 @@ namespace AGE
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
-	void AGE::Cube::Draw(const Shader& shader)
+	void GEAR::Cube::Draw(const Shader& shader)
 	{
 		glBindVertexArray(_vao);
 		glDrawArrays(GL_TRIANGLES, 0, 36);

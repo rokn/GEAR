@@ -30,13 +30,13 @@
 #include "mesh.h"
 #include <iostream>
 
-namespace AGE
+namespace GEAR
 {
 	Mesh::Mesh(GLfloat* vertices,int vc, GLuint* indices, int ic)
 	{
 		for(unsigned int i = 0;i<vc;i+=3)
 		{
-			AGE::Vertex v;
+			GEAR::Vertex v;
 			v.Position.x = vertices[i];
 			v.Position.y = vertices[i+1];
 			v.Position.z = vertices[i+2];
@@ -149,6 +149,6 @@ namespace AGE
 			4,0,7,
 		};
 		
-		return new AGE::Mesh(verts, 24, inds, 36);
+		return new GEAR::Mesh(verts, 24, inds, 36);
 	}
 }

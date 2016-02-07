@@ -2,16 +2,19 @@
 <CodeLite_Workspace Name="GEARWorkspace" Database="">
   <Project Name="GEAR" Path="GEAR/GEAR.project" Active="Yes"/>
   <Project Name="ConfigParser" Path="ConfigParser/ConfigParser.project" Active="No"/>
+  <Project Name="HelperLibrary" Path="HelperLibrary/HelperLibrary.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
       <Project Name="GEAR" ConfigName="Debug"/>
       <Project Name="ConfigParser" ConfigName="Debug"/>
+      <Project Name="HelperLibrary" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
       <Project Name="GEAR" ConfigName="Release"/>
       <Project Name="ConfigParser" ConfigName="Release"/>
+      <Project Name="HelperLibrary" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

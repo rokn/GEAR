@@ -32,7 +32,7 @@
 
 #include <GL/glew.h>
 
-namespace AGE
+namespace GEAR
 {
 	class ResourceManager
 	{

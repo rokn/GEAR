@@ -28,10 +28,12 @@
 //                                                                                                      //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "lightscene.h"
+#include "helper.h"
 
+#include <iostream>
 int main()
 {
-    AGE::LightScene game;
+    GEAR::LightScene game;
 	int exitCode = game.Run();
-    return exitCode;
+    return 0;
 }

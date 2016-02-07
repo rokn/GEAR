@@ -39,20 +39,20 @@
 #include "direction.h"
 
 
-namespace AGE
+namespace GEAR
 {
 	class Camera
 	{
 	private:
-		const static GLfloat DEFAULT_PITCH = 0.0f;
-		const static GLfloat DEFAULT_YAW = -90.0f;
-		const static GLfloat DEFAULT_MOVE_SPEED = 5.0f;
-		const static GLfloat DEFAULT_ZOOM = 45.0f;
-		const static GLfloat DEFAULT_NEAR_CLIP = 0.1f;
-		const static GLfloat DEFAULT_FAR_CLIP = 100.0f;
-		const static GLfloat MIN_ZOOM = 1.0f;
-		const static GLfloat MAX_ZOOM = 90.0f;
-		const static GLfloat SENSITIVITY = 0.05f;
+		constexpr static GLfloat DEFAULT_PITCH = 0.0f;
+		constexpr static GLfloat DEFAULT_YAW = -90.0f;
+		constexpr static GLfloat DEFAULT_MOVE_SPEED = 5.0f;
+		constexpr static GLfloat DEFAULT_ZOOM = 45.0f;
+		constexpr static GLfloat DEFAULT_NEAR_CLIP = 0.1f;
+		constexpr static GLfloat DEFAULT_FAR_CLIP = 100.0f;
+		constexpr static GLfloat MIN_ZOOM = 1.0f;
+		constexpr static GLfloat MAX_ZOOM = 90.0f;
+		constexpr static GLfloat SENSITIVITY = 0.05f;
 
 		glm::vec3 _position;
 		glm::vec3 _forward;

@@ -35,7 +35,7 @@
 #include <iostream>
 #include <GL/glew.h>
 
-namespace AGE
+namespace GEAR
 {
 	class Shader
 	{
