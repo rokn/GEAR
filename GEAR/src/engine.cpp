@@ -127,10 +127,13 @@ void Engine::CreateWindow(int resolutionWidth, int resolutionHeight, bool fullsc
     settings.depthBits = 24;
     settings.stencilBits = 8;
     settings.antialiasingLevel = 4;
+	settings.majorVersion = 3;
 	
 	int fullscreenFlag = (fullscreen) ? sf::Style::Fullscreen : sf::Style::None;
 	
 	_mainWindow.create(sf::VideoMode(resolutionWidth,resolutionHeight),"OpenGL", sf::Style::Close | fullscreenFlag, settings);
+	
+	std::cout << "ver:" << _mainWindow.getSettings().majorVersion << std::endl;
 }
 
 void Engine::Initialize()

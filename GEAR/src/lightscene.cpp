@@ -179,18 +179,27 @@ namespace GEAR
 //		lightColor.b = sin(GetRuntime().asSeconds() * 1.3f);
 		
 		glm::vec3 ambient = glm::vec3(0.25f);
-		glm::vec3 diffuse = glm::vec3(0.5f);
+		glm::vec3 diffuse = glm::vec3(1.0f);
 
-		glUniform3f(_objectShader->GetUniLoc("light.ambient"), ambient.r, ambient.g, ambient.b);
-		glUniform3f(_objectShader->GetUniLoc("light.diffuse"), diffuse.r, diffuse.g, diffuse.b);
+//		glUniform3f(_objectShader->GetUniLoc("spot.ambient"), ambient.r, ambient.g, ambient.b);
+		glUniform3f(_objectShader->GetUniLoc("spot.diffuse"), diffuse.r, diffuse.g, diffuse.b);
+		glUniform3f(_objectShader->GetUniLoc("spot.specular"), 1.0f, 1.0f, 1.0f);
+		glUniform3f(_objectShader->GetUniLoc("dir.ambient"), ambient.r/5, ambient.g/5, ambient.b/5);
+		glUniform3f(_objectShader->GetUniLoc("dir.diffuse"), diffuse.r, diffuse.g, diffuse.b);
+		glUniform3f(_objectShader->GetUniLoc("dir.specular"), 1.0f, 1.0f, 1.0f);
+		glUniform3f(_objectShader->GetUniLoc("dir.direction"), -0.3f, -1.0f, -0.2f);
+
 		
 		
 		glm::vec3 cameraPos =  _mainCamera->GetPosition();
 		glm::vec3 cameraFront =  _mainCamera->GetFrontVec();
-		glUniform3f(_objectShader->GetUniLoc("light.position"), cameraPos.x, cameraPos.y, cameraPos.z);
-		glUniform3f(_objectShader->GetUniLoc("light.direction"), cameraFront.x, cameraFront.y, cameraFront.z);
-		glUniform1f(_objectShader->GetUniLoc("light.innerCutOff"), cos(glm::radians(12.5f)));
-		glUniform1f(_objectShader->GetUniLoc("light.outerCutOff"), cos(glm::radians(17.5f)));
+		glUniform3f(_objectShader->GetUniLoc("spot.position"), cameraPos.x, cameraPos.y, cameraPos.z);
+		glUniform3f(_objectShader->GetUniLoc("spot.direction"), cameraFront.x, cameraFront.y, cameraFront.z);
+		glUniform1f(_objectShader->GetUniLoc("spot.constant"), 1.0f);
+		glUniform1f(_objectShader->GetUniLoc("spot.linear"), 0.09f);
+		glUniform1f(_objectShader->GetUniLoc("spot.quadratic"), 0.032f);
+		glUniform1f(_objectShader->GetUniLoc("spot.innerCutOff"), cos(glm::radians(12.5f)));
+		glUniform1f(_objectShader->GetUniLoc("spot.outerCutOff"), cos(glm::radians(17.5f)));
 		
 		
 		for(int i = 0; i<10; i++)
@@ -213,9 +222,6 @@ namespace GEAR
 		
 //		glUniform3f(_objectShader->GetUniLoc("light.position"), _lampPos.x, _lampPos.y, _lampPos.z);
 		glUniform3f(_objectShader->GetUniLoc("viewPos"), cameraPos.x, cameraPos.y, cameraPos.z);
-		glUniform1f(_objectShader->GetUniLoc("light.constant"), 1.0f);
-		glUniform1f(_objectShader->GetUniLoc("light.linear"), 0.09f);
-		glUniform1f(_objectShader->GetUniLoc("light.quadratic"), 0.032f);
 
 		glm::mat4 lampModelMat;
 		lampModelMat = glm::translate(lampModelMat,  _lampPos);

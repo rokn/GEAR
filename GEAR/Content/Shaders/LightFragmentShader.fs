@@ -3,7 +3,7 @@
 struct SpotLight {
     vec3 position;
     vec3 direction;
-    float cutOff;
+    float innerCutOff;
     float outerCutOff;
   
     float constant;
@@ -35,11 +35,14 @@ struct DirLight {
     vec3 specular;
 };
 
+uniform SpotLight spot;
+uniform DirLight dir;
+
 struct Material{
-	sampler2D diffuse;
-	sampler2D specular;
-	sampler2D emmision;
-	float shininess;
+    sampler2D diffuse;
+    sampler2D specular;
+    sampler2D emmision;
+    float shininess;
 };
 
 out vec4 outColor;
@@ -57,9 +60,16 @@ vec3 CalcSpotLight(SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir);
 
 void main()
 {
-	vec3 result = vec3(texture(material.diffuse, TexCoords));
+    vec3 norm = normalize(Normal);
+    vec3 viewDir = normalize(viewPos - FragPos);
 
-	outColor = vec4(result, 1.0f);
+    vec3 result = CalcDirLight(dir, norm, viewDir);
+    // Phase 2: Point lights
+    // Phase 3: Spot light
+    result += CalcSpotLight(spot, norm, FragPos, viewDir);
+    // vec3 result = material.diffuse;
+
+    outColor = vec4(result, 1.0f);
 }
 
 vec3 CalcPointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir)
@@ -73,7 +83,7 @@ vec3 CalcPointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir)
     // Attenuation
     float distance    = length(light.position - fragPos);
     float attenuation = 1.0f / (light.constant + light.linear * distance + 
-  			     light.quadratic * (distance * distance));    
+                 light.quadratic * (distance * distance));    
     // Combine results
     vec3 ambient  = light.ambient  * vec3(texture(material.diffuse, TexCoords));
     vec3 diffuse  = light.diffuse  * diff * vec3(texture(material.diffuse, TexCoords));
@@ -112,7 +122,7 @@ vec3 CalcSpotLight(SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir)
     float attenuation = 1.0f / (light.constant + light.linear * distance + light.quadratic * (distance * distance));    
     // Spotlight intensity
     float theta = dot(lightDir, normalize(-light.direction)); 
-    float epsilon = light.cutOff - light.outerCutOff;
+    float epsilon = light.innerCutOff - light.outerCutOff;
     float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);
     // Combine results
     vec3 ambient = light.ambient * vec3(texture(material.diffuse, TexCoords));

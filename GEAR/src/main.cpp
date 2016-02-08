@@ -31,9 +31,10 @@
 #include "helper.h"
 
 #include <iostream>
+
 int main()
 {
     GEAR::LightScene game;
 	int exitCode = game.Run();
-    return 0;
+    return exitCode;
 }
